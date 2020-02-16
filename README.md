@@ -74,7 +74,7 @@ We give an example to show Mypy's weakness about higher kinded types,
 
 <details>
 
-<summary>following code cannot typed in any python static type checker so far.</summary>
+<summary>following code cannot be typed by any python static type checker so far.</summary>
 
 ```python
 class Linq(Protocol):
