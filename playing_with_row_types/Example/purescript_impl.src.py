@@ -1,5 +1,7 @@
 from py_sexpr.terms import *
 from py_sexpr.stack_vm.emit import module_code
+from os.path import join as joinpath
+project_path = "C:\\Users\\twshe\\Desktop\\mydb\\com-haskell\\testing\\playing-with-row-types"
 res = block( " | This module is to show the type checker,   and cannot run without giving proproriate implementations in Example.py"
            , assign( "$foreign"
                    , call( var('import_module')
@@ -12,7 +14,10 @@ res = block( " | This module is to show the type checker,   and cannot run witho
                          , var("ps_opt2") ) )
            , assign( "ps_opt1"
                    , call( get_attr(var("$foreign"), "mkPyOption")
-                         , metadata(17, 20, "src\Example.purs", 1) ) )
+                         , metadata( 17
+                                   , 20
+                                   , joinpath(project_path, "src\\Example.purs")
+                                   , 1 ) ) )
            , assign( "ps_test2"
                    , call( call( get_item( get_attr(var("$foreign"), "linq")
                                          , "map" )
@@ -22,14 +27,16 @@ res = block( " | This module is to show the type checker,   and cannot run witho
                    , call( get_attr(var("$foreign"), "mkPyList")
                          , metadata( 16
                                    , 19
-                                   , "src\Example.purs"
+                                   , joinpath(project_path, "src\\Example.purs")
                                    , mktuple( metadata( 16
                                                       , 20
-                                                      , "src\Example.purs"
+                                                      , joinpath( project_path
+                                                      , "src\\Example.purs" )
                                                       , 1 )
                                             , metadata( 16
                                                       , 23
-                                                      , "src\Example.purs"
+                                                      , joinpath( project_path
+                                                      , "src\\Example.purs" )
                                                       , 2 ) ) ) ) )
            , assign( "ps_test1"
                    , call( call( get_item( get_attr(var("$foreign"), "linq")

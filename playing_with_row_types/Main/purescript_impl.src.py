@@ -1,5 +1,7 @@
 from py_sexpr.terms import *
 from py_sexpr.stack_vm.emit import module_code
+from os.path import join as joinpath
+project_path = "C:\\Users\\twshe\\Desktop\\mydb\\com-haskell\\testing\\playing-with-row-types"
 res = block( "No document"
            , assign( "$foreign"
                    , call( var('import_module')
@@ -14,16 +16,19 @@ res = block( "No document"
                                      , call( var("ps_getFoo")
                                            , metadata( 15
                                                      , 27
-                                                     , "src\Main.purs"
+                                                     , joinpath( project_path
+                                                     , "src\\Main.purs" )
                                                      , record( ( "foo"
                                                                , metadata( 15
                                                                          , 33
-                                                                         , "src\Main.purs"
+                                                                         , joinpath( project_path
+                                                                         , "src\\Main.purs" )
                                                                          , 1 ) )
                                                              , ( "bar"
                                                                , metadata( 15
                                                                          , 41
-                                                                         , "src\Main.purs"
+                                                                         , joinpath( project_path
+                                                                         , "src\\Main.purs" )
                                                                          , "2" ) ) ) ) ) ) )
                          , define( None
                                  , ["ps_$__unused"]
@@ -34,16 +39,19 @@ res = block( "No document"
                                                                , call( var( "ps_getFoo" )
                                                                      , metadata( 16
                                                                                , 27
-                                                                               , "src\Main.purs"
+                                                                               , joinpath( project_path
+                                                                               , "src\\Main.purs" )
                                                                                , record( ( "foo"
                                                                                          , metadata( 16
                                                                                                    , 33
-                                                                                                   , "src\Main.purs"
+                                                                                                   , joinpath( project_path
+                                                                                                   , "src\\Main.purs" )
                                                                                                    , "3" ) )
                                                                                        , ( "bar"
                                                                                          , metadata( 16
                                                                                                    , 43
-                                                                                                   , "src\Main.purs"
+                                                                                                   , joinpath( project_path
+                                                                                                   , "src\\Main.purs" )
                                                                                                    , 4 ) ) ) ) ) ) )
                                                    , define( None
                                                            , ["ps_$__unused"]
@@ -54,11 +62,13 @@ res = block( "No document"
                                                                                          , call( var( "ps_getFoo" )
                                                                                                , metadata( 17
                                                                                                          , 27
-                                                                                                         , "src\Main.purs"
+                                                                                                         , joinpath( project_path
+                                                                                                         , "src\\Main.purs" )
                                                                                                          , record( ( "foo"
                                                                                                                    , metadata( 17
                                                                                                                              , 33
-                                                                                                                             , "src\Main.purs"
+                                                                                                                             , joinpath( project_path
+                                                                                                                             , "src\\Main.purs" )
                                                                                                                              , record(  ) ) ) ) ) ) ) )
                                                                              , define( None
                                                                                      , [ "ps_$__unused" ]
@@ -67,25 +77,30 @@ res = block( "No document"
                                                                                                        , call( var( "ps_getFoo" )
                                                                                                              , metadata( 18
                                                                                                                        , 27
-                                                                                                                       , "src\Main.purs"
+                                                                                                                       , joinpath( project_path
+                                                                                                                       , "src\\Main.purs" )
                                                                                                                        , record( ( "foo"
                                                                                                                                  , metadata( 18
                                                                                                                                            , 33
-                                                                                                                                           , "src\Main.purs"
+                                                                                                                                           , joinpath( project_path
+                                                                                                                                           , "src\\Main.purs" )
                                                                                                                                            , record( ( "foo_nested"
                                                                                                                                                      , metadata( 18
                                                                                                                                                                , 46
-                                                                                                                                                               , "src\Main.purs"
+                                                                                                                                                               , joinpath( project_path
+                                                                                                                                                               , "src\\Main.purs" )
                                                                                                                                                                , 5 ) )
                                                                                                                                                    , ( "bar_nested"
                                                                                                                                                      , metadata( 18
                                                                                                                                                                , 61
-                                                                                                                                                               , "src\Main.purs"
+                                                                                                                                                               , joinpath( project_path
+                                                                                                                                                               , "src\\Main.purs" )
                                                                                                                                                                , 6 ) ) ) ) )
                                                                                                                                , ( "bar"
                                                                                                                                  , metadata( 18
                                                                                                                                            , 70
-                                                                                                                                           , "src\Main.purs"
+                                                                                                                                           , joinpath( project_path
+                                                                                                                                           , "src\\Main.purs" )
                                                                                                                                            , 7 ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) ) )
            , assign( "exports"
                    , record( ("getFoo", var("ps_getFoo"))
